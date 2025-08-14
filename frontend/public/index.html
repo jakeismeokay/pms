@@ -7,37 +7,82 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="A simple and efficient parking management system app."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>Parking Management System</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="root">
+      <header>
+        <h1>Welcome to the Parking Management System</h1>
+      </header>
+      <main>
+        <p>Find and manage available parking spots with ease.</p>
+        <section>
+          <h2>Current Parking Status</h2>
+          <div class="status-container">
+            <p>Available Spots: <span id="availableSpots">Loading...</span></p>
+            <p>Occupied Spots: <span id="occupiedSpots">Loading...</span></p>
+          </div>
+        </section>
+        <section>
+          <h2>Quick Actions</h2>
+          <button id="findSpotBtn">Find a Spot</button>
+          <button id="manageVehicleBtn">Manage Vehicle</button>
+        </section>
+        <hr />
+        <section class="payment-section">
+          <h2>Secure Payment</h2>
+          <form id="paymentForm">
+            <div class="form-group">
+              <label for="cardNumber">Card Number:</label>
+              <input
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="xxxx-xxxx-xxxx-xxxx"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="expiryDate">Expiry Date:</label>
+              <input
+                type="text"
+                id="expiryDate"
+                name="expiryDate"
+                placeholder="MM/YY"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV:</label>
+              <input
+                type="text"
+                id="cvv"
+                name="cvv"
+                placeholder="123"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="cardHolderName">Cardholder Name:</label>
+              <input
+                type="text"
+                id="cardHolderName"
+                name="cardHolderName"
+                required
+              />
+            </div>
+            <button type="submit" id="payNowBtn">Pay Now</button>
+          </form>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2024 Parking App. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>
